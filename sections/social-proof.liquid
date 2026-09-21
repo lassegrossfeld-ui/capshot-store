@@ -1,0 +1,27 @@
+<section class="section">
+  <div class="page-width">
+    <h2>{{ 'social.heading' | t }}</h2>
+    <div class="quotes">
+      <blockquote class="quote">
+        <p>{{ 'social.quote_1' | t }}</p>
+        <cite>{{ 'social.cite_1' | t }}</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>{{ 'social.quote_2' | t }}</p>
+        <cite>{{ 'social.cite_2' | t }}</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>{{ 'social.quote_3' | t }}</p>
+        <cite>{{ 'social.cite_3' | t }}</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.social.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.social.name" }]
+}
+{% endschema %}

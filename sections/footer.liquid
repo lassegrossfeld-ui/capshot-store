@@ -1,0 +1,65 @@
+<footer class="site-footer">
+  <div class="page-width footer-grid">
+    <div>
+      {% render 'logo' %}
+      <p>{{ 'product.tagline' | t }}</p>
+    </div>
+    <div>
+      <h2>{{ 'footer.shop' | t }}</h2>
+      <ul>
+        <li><a href="{{ routes.root_url }}">{{ 'header.home' | t }}</a></li>
+        <li><a href="{{ pages.regeln.url | default: '/pages/regeln' }}">{{ 'header.regeln' | t }}</a></li>
+        <li><a href="{{ pages.kontakt.url | default: '/pages/kontakt' }}">{{ 'header.kontakt' | t }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>{{ 'footer.legal' | t }}</h2>
+      <ul>
+        <li><a href="{{ pages.impressum.url | default: '/policies/legal-notice' }}">{{ 'footer.impressum' | t }}</a></li>
+        {% if shop.privacy_policy %}
+          <li><a href="{{ shop.privacy_policy.url }}">{{ 'footer.privacy' | t }}</a></li>
+        {% else %}
+          <li><a href="/policies/privacy-policy">{{ 'footer.privacy' | t }}</a></li>
+        {% endif %}
+        {% if shop.terms_of_service %}
+          <li><a href="{{ shop.terms_of_service.url }}">{{ 'footer.terms' | t }}</a></li>
+        {% else %}
+          <li><a href="/policies/terms-of-service">{{ 'footer.terms' | t }}</a></li>
+        {% endif %}
+        {% if shop.refund_policy %}
+          <li><a href="{{ shop.refund_policy.url }}">{{ 'footer.refund' | t }}</a></li>
+        {% else %}
+          <li><a href="/policies/refund-policy">{{ 'footer.refund' | t }}</a></li>
+        {% endif %}
+        {% if shop.shipping_policy %}
+          <li><a href="{{ shop.shipping_policy.url }}">{{ 'footer.shipping' | t }}</a></li>
+        {% else %}
+          <li><a href="/policies/shipping-policy">{{ 'footer.shipping' | t }}</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div>
+      <h2>{{ 'footer.newsletter' | t }}</h2>
+      <p>{{ 'footer.newsletter_text' | t }}</p>
+      {% form 'customer' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <label class="visually-hidden" for="NewsletterEmail">{{ 'footer.email' | t }}</label>
+        <div class="field">
+          <input id="NewsletterEmail" type="email" name="contact[email]" autocomplete="email" required>
+          <button class="btn btn--primary" type="submit">{{ 'footer.subscribe' | t }}</button>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+  <div class="page-width footer-legal">
+    <p>{{ 'footer.age' | t }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.footer.name" }]
+}
+{% endschema %}

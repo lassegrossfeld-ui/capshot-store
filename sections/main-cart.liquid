@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="page-width">
+    <h1>{{ 'cart.heading' | t }}</h1>
+    {% if cart.item_count == 0 %}
+      <div class="cart-empty">
+        <p>{{ 'cart.empty' | t }}</p>
+        <a class="btn btn--primary" href="{{ routes.root_url }}#buy">{{ 'cart.continue' | t }}</a>
+      </div>
+    {% else %}
+      {% form 'cart' %}
+        {% for item in cart.items %}
+          <div class="cart-line">
+            {% if item.image %}
+              {{ item.image | image_url: width: 160 | image_tag: alt: item.title, width: 80, height: 80 }}
+            {% endif %}
+            <div>
+              <a href="{{ item.url }}">{{ item.product.title }}</a>
+              <label class="visually-hidden" for="updates_{{ item.key }}">{{ 'cart.quantity' | t }}</label>
+              <input id="updates_{{ item.key }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0">
+              <a href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
+            </div>
+            <div>{{ item.final_line_price | money }}</div>
+          </div>
+        {% endfor %}
+        <p>{{ 'cart.subtotal' | t }}: {{ cart.total_price | money }}</p>
+        <button class="btn btn--primary" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
+      {% endform %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.cart.name",
+  "settings": []
+}
+{% endschema %}

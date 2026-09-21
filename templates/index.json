@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-lifestyle",
+      "settings": {}
+    },
+    "trust": {
+      "type": "trust-strip",
+      "settings": {}
+    },
+    "buy": {
+      "type": "product-buy",
+      "settings": {}
+    },
+    "how": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "size": {
+      "type": "size-proof",
+      "settings": {}
+    },
+    "social": {
+      "type": "social-proof",
+      "settings": {}
+    },
+    "specs": {
+      "type": "material-specs",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "trust", "buy", "how", "size", "social", "specs", "faq"]
+}

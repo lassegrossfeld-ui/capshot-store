@@ -1,0 +1,13 @@
+{% doc %}
+Renders the Capshot wordmark from the printed mat seal.
+@example
+{% render 'logo' %}
+{% enddoc %}
+<a class="logo" href="{{ routes.root_url }}">
+  <img
+    src="{{ 'capshot-mark.png' | asset_url }}"
+    alt="{{ 'general.shop_name' | t }}"
+    width="260"
+    height="155"
+  >
+</a>

@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="page-width faq">
+    <h2>{{ 'faq.heading' | t }}</h2>
+    <details>
+      <summary>{{ 'faq.q1' | t }}</summary>
+      <p>{{ 'faq.a1' | t }}</p>
+    </details>
+    <details>
+      <summary>{{ 'faq.q2' | t }}</summary>
+      <p>{{ 'faq.a2' | t }}</p>
+    </details>
+    <details>
+      <summary>{{ 'faq.q3' | t }}</summary>
+      <p>{{ 'faq.a3' | t }}</p>
+    </details>
+    <details>
+      <summary>{{ 'faq.q4' | t }}</summary>
+      <p>{{ 'faq.a4' | t }}</p>
+    </details>
+    <details>
+      <summary>{{ 'faq.q5' | t }}</summary>
+      <p>{{ 'faq.a5' | t }}</p>
+    </details>
+    <details>
+      <summary>{{ 'faq.q6' | t }}</summary>
+      <p>{{ 'faq.a6' | t }}</p>
+    </details>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.faq.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.faq.name" }]
+}
+{% endschema %}

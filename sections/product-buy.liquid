@@ -1,0 +1,78 @@
+{% liquid
+  assign buy_product = section.settings.product
+  if buy_product == blank
+    assign buy_product = settings.featured_product
+  endif
+  if buy_product == blank
+    assign buy_product = all_products['capshot-matte']
+  endif
+%}
+
+<section class="section" id="buy">
+  <div class="page-width buy">
+    <div class="gallery">
+      <div class="gallery-main" data-gallery-main>
+        <img
+          src="{{ 'capshot-packshot.png' | asset_url }}"
+          alt="{{ 'product.gallery_packshot' | t }}"
+          width="1200"
+          height="675"
+        >
+      </div>
+      <div class="thumbs">
+        <button type="button" class="is-active" data-gallery-thumb data-src="{{ 'capshot-packshot.png' | asset_url }}" data-alt="{{ 'product.gallery_packshot' | t }}">
+          <img src="{{ 'capshot-packshot.png' | asset_url }}" alt="{{ 'product.gallery_packshot' | t }}" width="300" height="188">
+        </button>
+        <button type="button" data-gallery-thumb data-src="{{ 'capshot-dimensions.svg' | asset_url }}" data-alt="{{ 'product.gallery_dimensions' | t }}">
+          <img src="{{ 'capshot-dimensions.svg' | asset_url }}" alt="{{ 'product.gallery_dimensions' | t }}" width="300" height="130">
+        </button>
+        <button type="button" data-gallery-thumb data-src="{{ 'capshot-hero-kitchen.png' | asset_url }}" data-alt="{{ 'product.gallery_kitchen' | t }}">
+          <img src="{{ 'capshot-hero-kitchen.png' | asset_url }}" alt="{{ 'product.gallery_kitchen' | t }}" width="300" height="188">
+        </button>
+        <button type="button" data-gallery-thumb data-src="{{ 'capshot-biergarten.png' | asset_url }}" data-alt="{{ 'product.gallery_garden' | t }}">
+          <img src="{{ 'capshot-biergarten.png' | asset_url }}" alt="{{ 'product.gallery_garden' | t }}" width="300" height="188">
+        </button>
+        <button type="button" data-gallery-thumb data-src="{{ 'capshot-closeup-flick.png' | asset_url }}" data-alt="{{ 'product.gallery_closeup' | t }}">
+          <img src="{{ 'capshot-closeup-flick.png' | asset_url }}" alt="{{ 'product.gallery_closeup' | t }}" width="300" height="188">
+        </button>
+        <button type="button" data-gallery-thumb data-src="{{ 'capshot-2v2-setup.png' | asset_url }}" data-alt="{{ 'product.gallery_setup' | t }}">
+          <img src="{{ 'capshot-2v2-setup.png' | asset_url }}" alt="{{ 'product.gallery_setup' | t }}" width="300" height="188">
+        </button>
+        <button type="button" data-gallery-thumb data-src="{{ 'capshot-rolled.png' | asset_url }}" data-alt="{{ 'product.gallery_rolled' | t }}">
+          <img src="{{ 'capshot-rolled.png' | asset_url }}" alt="{{ 'product.gallery_rolled' | t }}" width="300" height="188">
+        </button>
+        <button type="button" data-gallery-thumb data-src="{{ 'capshot-gift-party.png' | asset_url }}" data-alt="{{ 'product.gallery_gift' | t }}">
+          <img src="{{ 'capshot-gift-party.png' | asset_url }}" alt="{{ 'product.gallery_gift' | t }}" width="300" height="188">
+        </button>
+      </div>
+    </div>
+
+    {% render 'buy-box', product: buy_product %}
+  </div>
+</section>
+
+{% if buy_product %}
+  <div class="sticky-atc">
+    {% form 'product', buy_product %}
+      <input type="hidden" name="id" value="{{ buy_product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="quantity" value="1" data-sticky-qty>
+      <button class="btn btn--primary btn--full" type="submit" {% unless buy_product.available %}disabled{% endunless %} data-sticky-atc>
+        {{ 'product.add_to_cart' | t }} · {{ 'product.price_sale' | t }}
+      </button>
+    {% endform %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.product_buy.name",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:labels.product"
+    }
+  ],
+  "presets": [{ "name": "t:sections.product_buy.name" }]
+}
+{% endschema %}

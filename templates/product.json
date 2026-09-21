@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "buy": {
+      "type": "product-buy",
+      "settings": {}
+    },
+    "how": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "specs": {
+      "type": "material-specs",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    }
+  },
+  "order": ["buy", "how", "specs", "faq"]
+}

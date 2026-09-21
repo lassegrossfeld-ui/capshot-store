@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "brand": "Marke",
+    "logo": "Logo",
+    "featured_product": "Capshot-Produkt"
+  },
+  "labels": {
+    "heading": "Überschrift",
+    "text": "Text",
+    "image": "Bild",
+    "product": "Produkt"
+  },
+  "sections": {
+    "announcement": { "name": "Announcement" },
+    "header": { "name": "Header" },
+    "hero": { "name": "Hero" },
+    "trust": { "name": "Trust" },
+    "product_buy": { "name": "Produkt kaufen" },
+    "how": { "name": "So funktioniert's" },
+    "size": { "name": "Maße" },
+    "social": { "name": "Stimmen" },
+    "specs": { "name": "Specs" },
+    "faq": { "name": "FAQ" },
+    "footer": { "name": "Footer" },
+    "page": { "name": "Seite" },
+    "contact": { "name": "Kontakt" },
+    "cart": { "name": "Warenkorb" },
+    "main_404": { "name": "404" },
+    "password": { "name": "Passwort" },
+    "search": { "name": "Suche" },
+    "sticky_atc": { "name": "Sticky Warenkorb" }
+  }
+}

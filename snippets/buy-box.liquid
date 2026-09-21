@@ -1,0 +1,121 @@
+{% doc %}
+Sale buy box with two stacked offers, trust facts, and shipping tabs.
+@param {product} [product] - Capshot product
+@example
+{% render 'buy-box', product: buy_product %}
+{% enddoc %}
+
+{% liquid
+  assign unit_sale = 2490
+  assign unit_compare = 2990
+  assign unit_bundle = 2190
+  if product
+    assign unit_sale = product.price
+    if product.compare_at_price > product.price
+      assign unit_compare = product.compare_at_price
+    endif
+  endif
+%}
+
+<div
+  class="buy-box"
+  data-buy-box
+  data-price-sale="{{ unit_sale }}"
+  data-price-compare="{{ unit_compare }}"
+  data-price-bundle="{{ unit_bundle }}"
+>
+  <h2>{{ 'product.title' | t }}</h2>
+  <p class="lede">{{ 'product.tagline' | t }}</p>
+  <p class="tax-note">{{ 'product.tax_note' | t }}</p>
+
+  <div class="buy-trust">
+    <div class="buy-trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path></svg>
+      <div>
+        <strong>{{ 'product.ship_title' | t }}</strong>
+        <span>{{ 'product.ship_text' | t }}</span>
+      </div>
+    </div>
+    <div class="buy-trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+      <div>
+        <strong>{{ 'product.delivery_title' | t }}</strong>
+        <span>{{ 'product.delivery_text' | t }}</span>
+      </div>
+    </div>
+    <div class="buy-trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16v10H4zM8 7V5h8v2"></path></svg>
+      <div>
+        <strong>{{ 'product.return_title' | t }}</strong>
+        <span>{{ 'product.return_text' | t }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="offers" role="radiogroup" aria-label="{{ 'product.offers_label' | t }}">
+    <label class="offer">
+      <input type="radio" name="capshot-offer" value="1" data-offer checked>
+      <span class="offer-copy">
+        <span class="offer-kicker">{{ 'product.offer_1_title' | t }}</span>
+        <span class="offer-prices">
+          <span class="price">{{ 'product.price_sale' | t }}</span>
+          <s class="price price--compare">{{ 'product.price_compare' | t }}</s>
+          <span class="badge-sale">{{ 'product.sale_badge' | t }}</span>
+        </span>
+        <span class="offer-note">{{ 'product.offer_1_note' | t }}</span>
+      </span>
+      <span class="offer-radio" aria-hidden="true"></span>
+    </label>
+
+    <label class="offer offer--deal">
+      <input type="radio" name="capshot-offer" value="2" data-offer>
+      <span class="offer-copy">
+        <span class="badge-save">{{ 'product.offer_2_kicker' | t }}</span>
+        <span class="offer-kicker">{{ 'product.offer_2_title' | t }}</span>
+        <span class="offer-prices">
+          <span class="price">{{ 'product.offer_2_price' | t }}</span>
+          <span class="offer-unit">{{ 'product.offer_2_unit' | t }}</span>
+          <s class="price price--compare">{{ 'product.price_sale' | t }}</s>
+        </span>
+        <span class="offer-note">{{ 'product.offer_2_note' | t }} · {{ 'product.upsell_save' | t }}</span>
+      </span>
+      <span class="offer-radio" aria-hidden="true"></span>
+    </label>
+  </div>
+
+  {% if product %}
+    {% form 'product', product %}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="quantity" value="1" data-qty>
+      <button class="btn btn--primary btn--full" type="submit" {% unless product.available %}disabled{% endunless %}>
+        {% if product.available %}
+          {{ 'product.add_to_cart' | t }}
+        {% else %}
+          {{ 'product.sold_out' | t }}
+        {% endif %}
+      </button>
+    {% endform %}
+  {% else %}
+    <input type="hidden" value="1" data-qty>
+    <a class="btn btn--primary btn--full" href="{{ routes.cart_url }}">{{ 'product.add_to_cart' | t }}</a>
+  {% endif %}
+  <p class="payments">{{ 'product.payments' | t }}</p>
+
+  <div class="product-tabs">
+    <div class="tab-list" role="tablist">
+      <button type="button" class="tab is-active" role="tab" aria-selected="true" aria-controls="TabDesc" id="TabBtnDesc" data-tab="desc">{{ 'product.tab_desc' | t }}</button>
+      <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="TabShip" id="TabBtnShip" data-tab="ship">{{ 'product.tab_ship' | t }}</button>
+    </div>
+    <div class="tab-panel" id="TabDesc" role="tabpanel" aria-labelledby="TabBtnDesc">
+      <h3>{{ 'product.contents_title' | t }}</h3>
+      <ul class="buy-list">
+        <li>{{ 'product.content_1' | t }}</li>
+        <li>{{ 'product.content_2' | t }}</li>
+        <li>{{ 'product.content_3' | t }}</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="TabShip" role="tabpanel" aria-labelledby="TabBtnShip" hidden>
+      <p>{{ 'product.ship_tab' | t }}</p>
+    </div>
+  </div>
+</div>

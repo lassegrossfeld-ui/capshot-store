@@ -1,0 +1,25 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Capshot",
+    "theme_version": "1.0.0",
+    "theme_author": "Capshot",
+    "theme_documentation_url": "https://shopify.dev/docs/storefronts/themes",
+    "theme_support_url": "https://shopify.dev/docs/storefronts/themes"
+  },
+  {
+    "name": "t:settings.brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "t:settings.logo"
+      },
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "t:settings.featured_product"
+      }
+    ]
+  }
+]

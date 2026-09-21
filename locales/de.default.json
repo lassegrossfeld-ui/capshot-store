@@ -1,0 +1,226 @@
+{
+  "accessibility": {
+    "skip_to_content": "Zum Inhalt springen",
+    "menu": "Menü",
+    "cart": "Warenkorb",
+    "close": "Schließen"
+  },
+  "general": {
+    "shop_name": "Capshot"
+  },
+  "header": {
+    "regeln": "Regeln",
+    "kontakt": "Kontakt",
+    "home": "Home"
+  },
+  "announcement": {
+    "text": "Sale: 24,90 € statt 29,90 € · 2er Deal 21,90 € pro Spiel"
+  },
+  "hero": {
+    "heading": "Für Abende, die man noch erzählt",
+    "subheading": "38 × 106 cm. Ausrollen. Schnipsen. Leeren.",
+    "cta": "Hol dir dein Capshot"
+  },
+  "trust": {
+    "size_title": "Küchentisch-Fit",
+    "size_text": "38 × 106 cm — passt auf WG-Tisch und Bierzeltplatte",
+    "wipe_title": "Abwischbar",
+    "wipe_text": "Bier klebt, die Matte nicht",
+    "return_title": "14 Tage Widerruf",
+    "return_text": "Gesetzliches Widerrufsrecht für Verbraucher",
+    "ship_title": "Versandkostenfrei DE",
+    "ship_text": "Direkt zu dir, ohne Extra-Kosten"
+  },
+  "product": {
+    "title": "Capshot — Die Bierschnipsen-Matte",
+    "tagline": "Kronkorken schnipsen. Felder treffen. Flasche leer — Spiel gewonnen.",
+    "price_fallback": "24,90 €",
+    "price_sale": "24,90 €",
+    "price_compare": "29,90 €",
+    "sale_badge": "17% Rabatt",
+    "tax_note": "Inkl. Steuern. Versandkostenfrei in Deutschland.",
+    "ship_title": "Versandkostenfrei",
+    "ship_text": "Innerhalb Deutschlands",
+    "delivery_title": "2–5 Werktage",
+    "delivery_text": "Lieferzeit nach Bestelleingang",
+    "return_title": "14 Tage Widerruf",
+    "return_text": "Für Verbraucher in der EU",
+    "offers_label": "Angebot wählen",
+    "offer_1_title": "1 Spiel",
+    "offer_1_note": "Eine Matte, inkl. Anleitung",
+    "offer_2_title": "2er Pack — zwei Spiele",
+    "offer_2_kicker": "Besserer Deal",
+    "offer_2_price": "21,90 €",
+    "offer_2_unit": "/ Stück",
+    "offer_2_note": "43,80 € statt 49,80 €",
+    "upsell_title": "2er Pack — zwei Spiele",
+    "upsell_price": "21,90 € / Stück",
+    "upsell_save": "Spare 6,00 €",
+    "quantity": "Menge",
+    "tab_desc": "Beschreibung",
+    "tab_ship": "Versand & Retouren",
+    "ship_tab": "Versandkostenfrei in DE, Lieferzeit 2–5 Werktage. 14 Tage Widerrufsrecht. Retoure über das Widerrufsformular in deiner Bestellmail.",
+    "add_to_cart": "In den Warenkorb",
+    "sold_out": "Ausverkauft",
+    "contents_title": "Lieferumfang",
+    "content_1": "1 Spielfeld, 38 × 106 cm",
+    "content_2": "Bebilderte Anleitung",
+    "content_3": "Getränke und Kronkorken bringst du mit",
+    "payments": "PayPal, Klarna, Karte, Shop Pay",
+    "gallery_packshot": "Capshot Matte auf Schwarz",
+    "gallery_dimensions": "Maße 38 mal 106 Zentimeter",
+    "gallery_kitchen": "Capshot auf dem Küchentisch",
+    "gallery_garden": "Capshot auf der Bierzeltplatte",
+    "gallery_closeup": "Kronkorken landet auf dem Feld",
+    "gallery_setup": "Zwei gegen zwei am Tisch",
+    "gallery_rolled": "Matte eingerollt und ausgebreitet",
+    "gallery_gift": "Capshot auf einer WG-Party"
+  },
+  "how": {
+    "heading": "So funktioniert's",
+    "intro": "Vier Ecken, vier Fadenkreuze, eine Flasche pro Team. Der gelbe Kreis ist so groß wie der Flaschenboden.",
+    "step_1_title": "Ecken nehmen",
+    "step_1_text": "2 gegen 2 an die kurzen Seiten. Jeder Spieler hat eine Ecke — und jedes Fadenkreuz gehört zu genau einem Spieler.",
+    "step_1_alt": "Capshot-Matte mit vier Kronkorken auf den Eck-Fadenkreuzen und zwei Flaschen auf den gelben Kreisen",
+    "step_2_title": "Flasche auf den Kreis",
+    "step_2_text": "Volle Flasche auf den gelben Kreis deiner Seite. Der Kreis sitzt ungefähr so groß wie der Flaschenboden — nicht auf die Felder stellen.",
+    "step_2_alt": "Bierflasche steht auf dem gelben Kreis der Capshot-Matte, Kreis so groß wie der Flaschenboden",
+    "step_3_title": "Korken aufs Kreuz",
+    "step_3_text": "Leg deinen Kronkorken auf dein Fadenkreuz. Von hier aus schnipst du — nicht von irgendwo auf der Matte.",
+    "step_3_alt": "Kronkorken liegt mittig auf dem magenta Fadenkreuz in der Mattenecke",
+    "step_4_title": "Schnipsen und treffen",
+    "step_4_text": "Mit dem Finger übers Feld. Wer wirft, trinkt. Landet er im gegnerischen Feld, trinkt ihr. Gelb zählt mehr. Wer die Flasche zuerst leer hat, gewinnt.",
+    "step_4_alt": "Finger schnipst den Kronkorken vom Fadenkreuz Richtung Spielfelder"
+  },
+  "size": {
+    "heading": "Passt auf den Küchentisch",
+    "text": "38 × 106 cm liegt mittig auf einem 120 × 80 Küchentisch. Auf der 50-cm-Bierzeltplatte bleiben links und rechts ein paar Zentimeter Holz sichtbar."
+  },
+  "social": {
+    "heading": "Gebaut für die nächste Runde",
+    "quote_1": "Endlich ein Spielfeld statt Klebeband auf dem Küchentisch.",
+    "cite_1": "Erste Testspiele, WG",
+    "quote_2": "Zwei gegen zwei, zehn Minuten, dann Revanche. Genau so muss Vorglühen laufen.",
+    "cite_2": "Geburtstag",
+    "quote_3": "Kein 2-Meter-Tisch, keine 20 Becher. Matte raus und los.",
+    "cite_3": "Festival-Test"
+  },
+  "specs": {
+    "heading": "Auf einen Blick",
+    "size_label": "Maße",
+    "size_value": "38 × 106 cm",
+    "players_label": "Spieler",
+    "players_value": "2 oder 4 (2 gegen 2)",
+    "time_label": "Runde",
+    "time_value": "10–20 Minuten",
+    "need_label": "Du brauchst",
+    "need_value": "Tisch, Kronkorken, Getränke",
+    "material_label": "Material",
+    "material_value": "Abwischbare, einrollbare Plane"
+  },
+  "faq": {
+    "heading": "Bevor's losgeht",
+    "q1": "Wie viele Leute brauche ich?",
+    "a1": "Am besten 4 — zwei Zweierteams. Zu zweit geht ein Duell an den kurzen Seiten.",
+    "q2": "Was muss ich besorgen?",
+    "a2": "Nur Getränke und Kronkorken. Die Matte und die Anleitung sind im Karton.",
+    "q3": "Wie lange dauert eine Runde?",
+    "a3": "Etwa 10 bis 20 Minuten. Danach kommt fast immer die Revanche.",
+    "q4": "Passt das auf meinen Tisch?",
+    "a4": "38 × 106 cm. Standard-Küchentisch und Bierzeltplatte ja. Ein 80 × 80 Café-Tisch ist zu kurz.",
+    "q5": "Geht das auch ohne Alkohol?",
+    "a5": "Ja. Spezi, Radler, Wasser. Der Skill bleibt.",
+    "q6": "Wie reinige ich die Matte?",
+    "a6": "Feucht abwischen, trocknen lassen, einrollen."
+  },
+  "footer": {
+    "shop": "Shop",
+    "legal": "Rechtliches",
+    "newsletter": "Newsletter",
+    "newsletter_text": "Keine Updates zu Capshot verpassen.",
+    "email": "E-Mail",
+    "subscribe": "Anmelden",
+    "age": "Verkauf nur an Personen ab 18 Jahren. Bitte trink verantwortungsvoll.",
+    "impressum": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "refund": "Widerrufsrecht",
+    "shipping": "Versand"
+  },
+  "contact": {
+    "heading": "Kontakt",
+    "text": "Fragen zur Matte, zur Bestellung oder zum Versand? Schreib uns.",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Absenden"
+  },
+  "regeln": {
+    "heading": "Die Regeln"
+  },
+  "cart": {
+    "heading": "Warenkorb",
+    "empty": "Dein Warenkorb ist leer.",
+    "continue": "Zur Matte",
+    "checkout": "Zur Kasse",
+    "subtotal": "Zwischensumme",
+    "remove": "Entfernen",
+    "quantity": "Menge"
+  },
+  "404": {
+    "heading": "Seite nicht gefunden",
+    "text": "Zurück zum Spielfeld.",
+    "cta": "Zur Startseite"
+  },
+  "search": {
+    "heading": "Suche",
+    "placeholder": "Suchen",
+    "no_results": "Keine Treffer."
+  },
+  "gift_cards": {
+    "issued_on": "Ausgestellt am",
+    "expires_on": "Gültig bis",
+    "expired": "Abgelaufen",
+    "add_to_apple_wallet": "Zu Apple Wallet hinzufügen",
+    "use_at_checkout": "An der Kasse einlösen",
+    "code": "Code",
+    "shop_now": "Jetzt shoppen",
+    "qr_alt": "QR-Code"
+  },
+  "password": {
+    "heading": "Bald da",
+    "text": "Capshot geht live. Lass uns deine E-Mail da.",
+    "login": "Passwort eingeben"
+  },
+  "settings": {
+    "brand": "Marke",
+    "logo": "Logo",
+    "featured_product": "Capshot-Produkt"
+  },
+  "sections": {
+    "announcement": { "name": "Announcement" },
+    "header": { "name": "Header" },
+    "hero": { "name": "Hero" },
+    "trust": { "name": "Trust" },
+    "product_buy": { "name": "Produkt kaufen" },
+    "how": { "name": "So funktioniert's" },
+    "size": { "name": "Maße" },
+    "social": { "name": "Stimmen" },
+    "specs": { "name": "Specs" },
+    "faq": { "name": "FAQ" },
+    "footer": { "name": "Footer" },
+    "page": { "name": "Seite" },
+    "contact": { "name": "Kontakt" },
+    "cart": { "name": "Warenkorb" },
+    "main_404": { "name": "404" },
+    "password": { "name": "Passwort" },
+    "search": { "name": "Suche" },
+    "sticky_atc": { "name": "Sticky Warenkorb" }
+  },
+  "labels": {
+    "heading": "Überschrift",
+    "text": "Text",
+    "image": "Bild",
+    "product": "Produkt"
+  }
+}

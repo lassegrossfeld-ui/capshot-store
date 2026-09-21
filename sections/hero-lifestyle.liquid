@@ -1,0 +1,23 @@
+<section class="hero">
+  <img
+    src="{{ 'capshot-hero-kitchen.png' | asset_url }}"
+    alt="{{ 'product.gallery_kitchen' | t }}"
+    width="1600"
+    height="900"
+  >
+  <div class="hero-copy">
+    <div class="page-width">
+      <h1>{{ 'hero.heading' | t }}</h1>
+      <p>{{ 'hero.subheading' | t }}</p>
+      <a class="btn btn--primary" href="#buy">{{ 'hero.cta' | t }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.hero.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.hero.name" }]
+}
+{% endschema %}

@@ -1,0 +1,36 @@
+<header class="site-header">
+  <div class="page-width header-inner">
+    <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="MobileNav">
+      <span class="visually-hidden">{{ 'accessibility.menu' | t }}</span>
+      {% render 'icon-menu' %}
+    </button>
+    {% render 'logo' %}
+    <nav class="nav" aria-label="{{ 'general.shop_name' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'header.home' | t }}</a>
+      <a href="{{ pages.regeln.url | default: '/pages/regeln' }}">{{ 'header.regeln' | t }}</a>
+      <a href="{{ pages.kontakt.url | default: '/pages/kontakt' }}">{{ 'header.kontakt' | t }}</a>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-btn" href="{{ routes.cart_url }}">
+        <span class="visually-hidden">{{ 'accessibility.cart' | t }}</span>
+        {% render 'icon-cart' %}
+        {% if cart.item_count > 0 %}
+          <span class="cart-count">{{ cart.item_count }}</span>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+  <nav id="MobileNav" class="menu-panel page-width" data-menu-panel>
+    <a href="{{ routes.root_url }}">{{ 'header.home' | t }}</a>
+    <a href="{{ pages.regeln.url | default: '/pages/regeln' }}">{{ 'header.regeln' | t }}</a>
+    <a href="{{ pages.kontakt.url | default: '/pages/kontakt' }}">{{ 'header.kontakt' | t }}</a>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.header.name" }]
+}
+{% endschema %}

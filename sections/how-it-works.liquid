@@ -1,0 +1,48 @@
+<section class="section">
+  <div class="page-width">
+    <h2>{{ 'how.heading' | t }}</h2>
+    <p class="lede">{{ 'how.intro' | t }}</p>
+    <div class="how-grid">
+      <article class="how-card">
+        <img src="{{ 'how-setup.png' | asset_url }}" alt="{{ 'how.step_1_alt' | t }}" width="1200" height="675">
+        <div class="how-card-body">
+          <span class="how-num">1</span>
+          <h3>{{ 'how.step_1_title' | t }}</h3>
+          <p>{{ 'how.step_1_text' | t }}</p>
+        </div>
+      </article>
+      <article class="how-card">
+        <img src="{{ 'how-bottle.png' | asset_url }}" alt="{{ 'how.step_2_alt' | t }}" width="1200" height="900">
+        <div class="how-card-body">
+          <span class="how-num">2</span>
+          <h3>{{ 'how.step_2_title' | t }}</h3>
+          <p>{{ 'how.step_2_text' | t }}</p>
+        </div>
+      </article>
+      <article class="how-card">
+        <img src="{{ 'how-crosshair.png' | asset_url }}" alt="{{ 'how.step_3_alt' | t }}" width="1200" height="900">
+        <div class="how-card-body">
+          <span class="how-num">3</span>
+          <h3>{{ 'how.step_3_title' | t }}</h3>
+          <p>{{ 'how.step_3_text' | t }}</p>
+        </div>
+      </article>
+      <article class="how-card">
+        <img src="{{ 'how-flick.png' | asset_url }}" alt="{{ 'how.step_4_alt' | t }}" width="1200" height="900">
+        <div class="how-card-body">
+          <span class="how-num">4</span>
+          <h3>{{ 'how.step_4_title' | t }}</h3>
+          <p>{{ 'how.step_4_text' | t }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.how.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.how.name" }]
+}
+{% endschema %}
