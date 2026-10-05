@@ -1,0 +1,21 @@
+{% liquid
+  assign shop_url = all_products['capshot-matte'].url | default: '/products/capshot-matte'
+%}
+
+<section class="section section--cta-banner">
+  <div class="page-width">
+    <div class="cta-banner">
+      <h2 class="cta-banner__title">{{ 'home.cta_banner_title' | t }}</h2>
+      <p class="cta-banner__text">{{ 'home.cta_banner_text' | t }}</p>
+      <a class="btn btn--cta-banner" href="{{ shop_url }}">{{ 'home.cta_banner_button' | t }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.cta_banner.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.cta_banner.name" }]
+}
+{% endschema %}

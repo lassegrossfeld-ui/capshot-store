@@ -1,0 +1,11 @@
+{% liquid
+  assign feat_1_title = 'features.card_1_title' | t
+  assign feat_1_text = 'features.card_1_text' | t
+  assign feat_2_title = 'features.card_2_title' | t
+  assign feat_3_title = 'features.card_3_title' | t
+%}
+<div class="feature-offers">
+  {% render 'offer-feature-card', title: feat_1_title, text: feat_1_text %}
+  {% render 'offer-feature-card', title: feat_2_title %}
+  {% render 'offer-feature-card', title: feat_3_title %}
+</div>

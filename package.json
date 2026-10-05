@@ -1,0 +1,17 @@
+{
+  "name": "capshot-store",
+  "private": true,
+  "description": "Capshot Shopify OS 2.0 theme",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "shopify": "bash scripts/shopify-cli.sh",
+    "theme:dev": "bash scripts/shopify-cli.sh theme dev --environment default",
+    "theme:push": "bash scripts/shopify-cli.sh theme push --environment default --unpublished",
+    "theme:pull": "bash scripts/shopify-cli.sh theme pull",
+    "theme:list": "bash scripts/shopify-cli.sh theme list --environment default",
+    "auth:login": "bash scripts/shopify-cli.sh auth login",
+    "auth:logout": "bash scripts/shopify-cli.sh auth logout"
+  }
+}

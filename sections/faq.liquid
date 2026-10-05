@@ -1,0 +1,50 @@
+{% liquid
+  assign faq_product = all_products['capshot-matte']
+  if template.name == 'product'
+    assign faq_buy_url = '#buy'
+  else
+    assign faq_buy_url = faq_product.url | default: '/products/capshot-matte'
+  endif
+%}
+
+<section class="section section--faq" id="faq">
+  <div class="page-width faq-split">
+    <aside class="faq-aside">
+      <a class="faq-aside__logo logo" href="{{ routes.root_url }}">
+        <img
+          src="{{ 'capshot-mark.png' | asset_url }}"
+          alt="{{ 'general.shop_name' | t }}"
+          width="260"
+          height="155"
+        >
+      </a>
+      <h2 class="faq-aside__heading">{{ 'faq.heading' | t }}</h2>
+      <p class="faq-aside__lede">{{ 'faq.aside_lede' | t }}</p>
+      <p class="faq-aside__price">
+        <span class="price">{{ 'product.price_sale' | t }}</span>
+        <s class="price price--compare">{{ 'product.price_compare' | t }}</s>
+      </p>
+      <a class="btn btn--primary faq-aside__cta" href="{{ faq_buy_url }}">{{ 'faq.cta_order' | t }}</a>
+      <p class="faq-aside__ship">{{ 'product.ship_title' | t }} · {{ 'product.ship_text' | t }}</p>
+    </aside>
+
+    <div class="faq-accordion" data-faq-accordion>
+      {% render 'faq-accordion-item', index: 1, question_key: 'faq.q1', answer_key: 'faq.a1' %}
+      {% render 'faq-accordion-item', index: 2, question_key: 'faq.q2', answer_key: 'faq.a2' %}
+      {% render 'faq-accordion-item', index: 3, question_key: 'faq.q3', answer_key: 'faq.a3' %}
+      {% render 'faq-accordion-item', index: 4, question_key: 'faq.q4', answer_key: 'faq.a4' %}
+      {% render 'faq-accordion-item', index: 5, question_key: 'faq.q5', answer_key: 'faq.a5' %}
+      {% render 'faq-accordion-item', index: 6, question_key: 'faq.q6', answer_key: 'faq.a6' %}
+      {% render 'faq-accordion-item', index: 7, question_key: 'faq.q7', answer_key: 'faq.a7' %}
+      {% render 'faq-accordion-item', index: 8, question_key: 'faq.q8', answer_key: 'faq.a8' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.faq.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.faq.name" }]
+}
+{% endschema %}

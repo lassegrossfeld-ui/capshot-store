@@ -1,0 +1,28 @@
+<section class="section section--community-page">
+  <div class="page-width">
+    <div class="page-hero">
+      <h1>{{ 'community.heading' | t }}</h1>
+      <p class="lede">{{ 'community.lede' | t }}</p>
+    </div>
+
+    <div class="community-page__grid" aria-label="{{ 'community.gallery_label' | t }}">
+      {% for i in (1..6) %}
+        <div class="media-placeholder community-page__placeholder" aria-hidden="true">
+          <span>{{ 'community.placeholder' | t }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <p class="community-page__hint">
+      {{ 'community.hint_before' | t }}
+      <a href="{{ pages.kontakt.url | default: '/pages/kontakt' }}">{{ 'header.kontakt' | t }}</a>{{ 'community.hint_after' | t }}
+    </p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.community_page.name",
+  "settings": []
+}
+{% endschema %}

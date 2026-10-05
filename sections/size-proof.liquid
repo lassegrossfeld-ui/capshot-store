@@ -1,0 +1,22 @@
+<section class="section">
+  <div class="page-width size-grid">
+    <img
+      src="{{ 'capshot-dimensions.svg' | asset_url }}"
+      alt="{{ 'product.gallery_dimensions' | t }}"
+      width="1200"
+      height="520"
+    >
+    <div>
+      <h2>{{ 'size.heading' | t }}</h2>
+      <p class="lede">{{ 'size.text' | t }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.size.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.size.name" }]
+}
+{% endschema %}

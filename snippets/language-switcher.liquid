@@ -1,0 +1,26 @@
+<div class="shop-settings" data-shop-settings>
+  <button type="button" class="shop-settings__toggle" data-panel-toggle aria-expanded="false" aria-controls="ShopSettings">
+    <img
+      data-locale-flag
+      src="{% if request.locale.iso_code == 'en' %}https://cdn.shopify.com/static/images/flags/gb.svg{% else %}https://cdn.shopify.com/static/images/flags/de.svg{% endif %}"
+      alt=""
+      width="22"
+      height="16"
+    >
+    <span data-locale-code>{% if request.locale.iso_code == 'en' %}EN{% else %}DE{% endif %}</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.3 8.3a1 1 0 0 1 1.4 0L12 12.6l4.3-4.3a1 1 0 1 1 1.4 1.4l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 0-1.4Z"></path></svg>
+    <span class="visually-hidden">{{ 'header.language' | t }}</span>
+  </button>
+  <div class="shop-settings__panel" id="ShopSettings" hidden>
+    {% form 'localization' %}
+      <button type="submit" name="locale_code" value="de" class="shop-settings__lang{% if request.locale.iso_code != 'en' %} is-active{% endif %}">
+        <img src="https://cdn.shopify.com/static/images/flags/de.svg" alt="" width="22" height="16">
+        {{ 'header.lang_de' | t }}
+      </button>
+      <button type="submit" name="locale_code" value="en" class="shop-settings__lang{% if request.locale.iso_code == 'en' %} is-active{% endif %}">
+        <img src="https://cdn.shopify.com/static/images/flags/gb.svg" alt="" width="22" height="16">
+        {{ 'header.lang_en' | t }}
+      </button>
+    {% endform %}
+  </div>
+</div>

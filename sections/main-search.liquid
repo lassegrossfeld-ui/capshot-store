@@ -1,0 +1,31 @@
+<section class="section">
+  <div class="page-width">
+    <h1>{{ 'search.heading' | t }}</h1>
+    <form action="{{ routes.search_url }}" method="get">
+      <label class="visually-hidden" for="Search">{{ 'search.placeholder' | t }}</label>
+      <div class="field">
+        <input id="Search" type="search" name="q" value="{{ search.terms | escape }}">
+        <button class="btn btn--primary" type="submit">{{ 'search.placeholder' | t }}</button>
+      </div>
+    </form>
+    {% if search.performed %}
+      {% if search.results_count == 0 %}
+        <p>{{ 'search.no_results' | t }}</p>
+      {% else %}
+        {% paginate search.results by 20 %}
+          {% for item in search.results %}
+            <p><a href="{{ item.url }}">{{ item.title }}</a></p>
+          {% endfor %}
+          {{ paginate | default_pagination }}
+        {% endpaginate %}
+      {% endif %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.search.name",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,58 @@
+{% liquid
+  assign hero_product = all_products['capshot-matte']
+  assign hero_url = hero_product.url | default: '/products/capshot-matte'
+%}
+
+<section class="section section--slideshow">
+  <div class="slideshow" data-slideshow data-slideshow-interval="4500" aria-roledescription="Karussell" aria-label="{{ 'general.shop_name' | t }}">
+    <div class="slideshow-viewport">
+      <div class="slideshow-slide slideshow-slide--party is-active" data-slideshow-slide>
+        <img
+          src="{{ 'capshot-banner-party-01.jpg' | asset_url }}"
+          alt="{{ 'home.slide_party_alt' | t }}"
+          width="2520"
+          height="1080"
+        >
+      </div>
+      <div class="slideshow-slide slideshow-slide--party" data-slideshow-slide hidden>
+        <img
+          src="{{ 'capshot-banner-party-02.jpg' | asset_url }}"
+          alt="{{ 'home.slide_party_2_alt' | t }}"
+          width="2520"
+          height="1080"
+        >
+      </div>
+      <div class="slideshow-slide slideshow-slide--party" data-slideshow-slide hidden>
+        <img
+          src="{{ 'capshot-banner-party-03.jpg' | asset_url }}"
+          alt="{{ 'home.slide_party_3_alt' | t }}"
+          width="2520"
+          height="1080"
+        >
+      </div>
+      <div class="slideshow-overlay">
+        <div class="slideshow-overlay__scrim" aria-hidden="true"></div>
+        <div class="page-width slideshow-overlay__inner">
+          <p class="slideshow-slogan">{{ 'home.slogan' | t }}</p>
+          {% render 'product-offer-card', url: hero_url, thumbnail: true %}
+        </div>
+      </div>
+      <button class="slideshow-arrow slideshow-arrow--prev" type="button" data-slideshow-prev>
+        <span class="visually-hidden">{{ 'home.prev' | t }}</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 5 8 12l7 7"></path></svg>
+      </button>
+      <button class="slideshow-arrow slideshow-arrow--next" type="button" data-slideshow-next>
+        <span class="visually-hidden">{{ 'home.next' | t }}</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.slideshow.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.slideshow.name" }]
+}
+{% endschema %}

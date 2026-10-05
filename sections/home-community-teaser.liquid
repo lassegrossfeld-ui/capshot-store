@@ -1,0 +1,22 @@
+<section class="section section--community-teaser">
+  <div class="page-width community-teaser">
+    <div class="community-teaser__grid">
+      <div class="media-placeholder community-teaser__placeholder" aria-hidden="true"><span>{{ 'home.community_teaser_placeholder' | t }}</span></div>
+      <div class="media-placeholder community-teaser__placeholder" aria-hidden="true"><span>{{ 'home.community_teaser_placeholder' | t }}</span></div>
+      <div class="media-placeholder community-teaser__placeholder" aria-hidden="true"><span>{{ 'home.community_teaser_placeholder' | t }}</span></div>
+    </div>
+    <div class="community-teaser__copy">
+      <h2>{{ 'home.community_teaser_title' | t }}</h2>
+      <p>{{ 'home.community_teaser_text' | t }}</p>
+      <a class="btn btn--ghost" href="{{ pages.community.url | default: '/pages/community' }}">{{ 'home.community_teaser_cta' | t }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.community_teaser.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.community_teaser.name" }]
+}
+{% endschema %}

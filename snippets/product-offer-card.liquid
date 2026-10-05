@@ -1,0 +1,34 @@
+{% doc %}
+Offer-style product card link for home hero and flagship blocks.
+@param {string} url - Product URL
+@param {boolean} [thumbnail] - Show packshot thumbnail in the card
+@example
+{% render 'product-offer-card', url: product.url, thumbnail: true %}
+{% enddoc %}
+
+<a
+  class="offer offer--hero{% if thumbnail %} offer--hero-thumb{% endif %}"
+  href="{{ url }}"
+  aria-label="{{ 'product.title' | t }} — {{ 'product.price_sale' | t }}"
+>
+  {% if thumbnail %}
+    <img
+      class="offer-thumb"
+      src="{{ 'capshot-packshot.png' | asset_url }}"
+      alt=""
+      width="120"
+      height="120"
+    >
+  {% endif %}
+  <span class="offer-copy">
+    <span class="offer-prices">
+      <span class="price">{{ 'product.price_sale' | t }}</span>
+      <s class="price price--compare">{{ 'product.price_compare' | t }}</s>
+      <span class="badge-sale">{{ 'product.sale_badge' | t }}</span>
+    </span>
+    <span class="offer-note">{{ 'product.offer_1_note' | t }}</span>
+  </span>
+  <span class="offer-go" aria-hidden="true">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 5 7 7-7 7"></path></svg>
+  </span>
+</a>

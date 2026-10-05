@@ -1,0 +1,52 @@
+<footer class="site-footer">
+  <div class="page-width footer-grid">
+    <div>
+      {% render 'logo' %}
+      <p>{{ 'product.tagline' | t }}</p>
+    </div>
+    <div>
+      <h2>{{ 'footer.shop' | t }}</h2>
+      <ul>
+        <li><a href="{{ routes.root_url }}">{{ 'header.home' | t }}</a></li>
+        <li><a href="{{ all_products['capshot-matte'].url | default: '/products/capshot-matte' }}">{{ 'header.capshot' | t }}</a></li>
+        <li><a href="{{ pages.regeln.url | default: '/pages/regeln' }}">{{ 'header.regeln' | t }}</a></li>
+        <li><a href="{{ pages.kontakt.url | default: '/pages/kontakt' }}">{{ 'header.kontakt' | t }}</a></li>
+        <li><a href="{{ pages.community.url | default: '/pages/community' }}">{{ 'header.community' | t }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>{{ 'footer.legal' | t }}</h2>
+      <ul>
+        <li><a href="{{ pages.impressum.url | default: '/pages/impressum' }}">{{ 'footer.impressum' | t }}</a></li>
+        <li><a href="{{ pages.datenschutz.url | default: '/pages/datenschutz' }}">{{ 'footer.privacy' | t }}</a></li>
+        <li><a href="{{ pages.agb.url | default: '/pages/agb' }}">{{ 'footer.terms' | t }}</a></li>
+        <li><a href="{{ pages.widerruf.url | default: '/pages/widerruf' }}">{{ 'footer.refund' | t }}</a></li>
+        <li><a href="{{ pages.versand.url | default: '/pages/versand' }}">{{ 'footer.shipping' | t }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>{{ 'footer.newsletter' | t }}</h2>
+      <p>{{ 'footer.newsletter_text' | t }}</p>
+      {% form 'customer' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <label class="visually-hidden" for="NewsletterEmail">{{ 'footer.email' | t }}</label>
+        <div class="field">
+          <input id="NewsletterEmail" type="email" name="contact[email]" autocomplete="email" required>
+          <button class="btn btn--primary" type="submit">{{ 'footer.subscribe' | t }}</button>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+  <div class="page-width footer-legal">
+    <p>{{ 'footer.age' | t }}</p>
+    <p>{{ 'footer.vat' | t }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.footer.name" }]
+}
+{% endschema %}

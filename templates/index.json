@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "home-slideshow",
+      "settings": {}
+    },
+    "steps": {
+      "type": "home-steps",
+      "settings": {}
+    },
+    "regeln_teaser": {
+      "type": "home-regeln-teaser",
+      "settings": {}
+    },
+    "why": {
+      "type": "home-why",
+      "settings": {}
+    },
+    "flagship": {
+      "type": "flagship-product",
+      "settings": {}
+    },
+    "community": {
+      "type": "home-community-teaser",
+      "settings": {}
+    },
+    "faq_teaser": {
+      "type": "home-faq-teaser",
+      "settings": {}
+    },
+    "cta_banner": {
+      "type": "home-cta-banner",
+      "settings": {}
+    }
+  },
+  "order": [
+    "slideshow",
+    "steps",
+    "regeln_teaser",
+    "why",
+    "flagship",
+    "community",
+    "faq_teaser",
+    "cta_banner"
+  ]
+}

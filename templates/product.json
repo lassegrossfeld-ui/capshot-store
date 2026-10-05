@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "trust": {
+      "type": "trust-strip",
+      "settings": {}
+    },
+    "buy": {
+      "type": "product-buy",
+      "settings": {}
+    },
+    "how": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "regeln_teaser": {
+      "type": "home-regeln-teaser",
+      "settings": {}
+    },
+    "specs": {
+      "type": "material-specs",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    }
+  },
+  "order": ["buy", "trust", "how", "regeln_teaser", "specs", "faq"]
+}

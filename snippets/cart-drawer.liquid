@@ -1,0 +1,40 @@
+<div class="cart-drawer" id="CartDrawer" data-cart-drawer hidden>
+  <div class="cart-drawer__backdrop" data-cart-close tabindex="-1" aria-hidden="true"></div>
+  <aside
+    class="cart-drawer__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="CartDrawerTitle"
+    tabindex="-1"
+  >
+    <header class="cart-drawer__head">
+      <h2 id="CartDrawerTitle">{{ 'cart.heading' | t }}</h2>
+      <button class="icon-btn cart-drawer__close" type="button" data-cart-close>
+        <span class="visually-hidden">{{ 'accessibility.close' | t }}</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+      </button>
+    </header>
+    <div class="cart-drawer__body">
+      {% if cart.item_count == 0 %}
+        <p class="cart-empty">{{ 'cart.empty' | t }}</p>
+      {% else %}
+        {% for item in cart.items %}
+          <div class="cart-line">
+            {% if item.image %}
+              {{ item.image | image_url: width: 160 | image_tag: alt: item.title, width: 80, height: 80 }}
+            {% endif %}
+            <div>
+              <a href="{{ item.url }}">{{ item.product.title }}</a>
+              <p>{{ 'cart.quantity' | t }}: {{ item.quantity }}</p>
+            </div>
+            <div>{{ item.final_line_price | money }}</div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <footer class="cart-drawer__foot">
+      <p>{{ 'cart.subtotal' | t }}: {{ cart.total_price | money }}</p>
+      <a class="btn btn--primary btn--full" href="{{ routes.cart_url }}">{{ 'cart.checkout' | t }}</a>
+    </footer>
+  </aside>
+</div>

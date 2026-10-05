@@ -1,0 +1,139 @@
+{% liquid
+  assign buy_product = section.settings.product
+  if buy_product == blank
+    assign buy_product = settings.featured_product
+  endif
+  if buy_product == blank
+    assign buy_product = all_products['capshot-matte']
+  endif
+%}
+
+<section class="section{% if template.name == 'product' %} product-stage{% endif %}" id="buy">
+  <div class="page-width buy{% if template.name == 'product' %} buy--pdp{% endif %}">
+    {% if template.name == 'product' %}
+      {% liquid
+        assign gallery_files = 'capshot-packshot.png|capshot-closeup-flick.png|capshot-rolled.png' | split: '|'
+        assign gallery_alts = 'product.gallery_packshot|product.gallery_closeup|product.gallery_rolled' | split: '|'
+        assign gallery_widths = '1200|1200|1200' | split: '|'
+        assign gallery_heights = '675|675|675' | split: '|'
+      %}
+      <div class="gallery gallery--pdp">
+        <div class="gallery-rail">
+          <button type="button" class="gallery-arrow" data-gallery-prev disabled aria-label="{{ 'accessibility.gallery_prev' | t }}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 14l6-6 6 6"></path></svg>
+          </button>
+          <div class="thumbs thumbs--rail" data-gallery-thumbs>
+            {% for file in gallery_files %}
+              {% assign alt_key = gallery_alts[forloop.index0] %}
+              <button
+                type="button"
+                class="{% if forloop.first %}is-active{% endif %}"
+                data-gallery-thumb
+                data-gallery-index="{{ forloop.index0 }}"
+                data-src="{{ file | asset_url }}"
+                data-alt="{{ alt_key | t }}"
+                {% if forloop.first %}aria-current="true"{% endif %}
+                aria-label="{{ alt_key | t }}"
+              >
+                <img
+                  src="{{ file | asset_url }}"
+                  alt=""
+                  width="300"
+                  height="188"
+                >
+              </button>
+            {% endfor %}
+          </div>
+          <button type="button" class="gallery-arrow" data-gallery-next aria-label="{{ 'accessibility.gallery_next' | t }}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 10l6 6 6-6"></path></svg>
+          </button>
+        </div>
+        <div class="gallery-main gallery-main--pdp" data-gallery-pdp-main aria-label="{{ 'accessibility.gallery_label' | t }}">
+          <img
+            src="{{ gallery_files[0] | asset_url }}"
+            alt="{{ gallery_alts[0] | t }}"
+            width="{{ gallery_widths[0] }}"
+            height="{{ gallery_heights[0] }}"
+          >
+        </div>
+      </div>
+      <div class="buy-pin">
+        <div class="buy-pin-inner">
+          {% render 'buy-box', product: buy_product %}
+        </div>
+      </div>
+    {% else %}
+      <div class="gallery">
+        <div class="gallery-main" data-gallery-main>
+          <img
+            src="{{ 'capshot-packshot.png' | asset_url }}"
+            alt="{{ 'product.gallery_packshot' | t }}"
+            width="1200"
+            height="675"
+          >
+        </div>
+        <div class="thumbs">
+          <button type="button" class="is-active" data-gallery-thumb data-src="{{ 'capshot-packshot.png' | asset_url }}" data-alt="{{ 'product.gallery_packshot' | t }}">
+            <img src="{{ 'capshot-packshot.png' | asset_url }}" alt="{{ 'product.gallery_packshot' | t }}" width="300" height="188">
+          </button>
+          <button type="button" data-gallery-thumb data-src="{{ 'capshot-dimensions.svg' | asset_url }}" data-alt="{{ 'product.gallery_dimensions' | t }}">
+            <img src="{{ 'capshot-dimensions.svg' | asset_url }}" alt="{{ 'product.gallery_dimensions' | t }}" width="300" height="130">
+          </button>
+          <button type="button" data-gallery-thumb data-src="{{ 'capshot-hero-kitchen.png' | asset_url }}" data-alt="{{ 'product.gallery_kitchen' | t }}">
+            <img src="{{ 'capshot-hero-kitchen.png' | asset_url }}" alt="{{ 'product.gallery_kitchen' | t }}" width="300" height="188">
+          </button>
+          <button type="button" data-gallery-thumb data-src="{{ 'capshot-biergarten.png' | asset_url }}" data-alt="{{ 'product.gallery_garden' | t }}">
+            <img src="{{ 'capshot-biergarten.png' | asset_url }}" alt="{{ 'product.gallery_garden' | t }}" width="300" height="188">
+          </button>
+          <button type="button" data-gallery-thumb data-src="{{ 'capshot-closeup-flick.png' | asset_url }}" data-alt="{{ 'product.gallery_closeup' | t }}">
+            <img src="{{ 'capshot-closeup-flick.png' | asset_url }}" alt="{{ 'product.gallery_closeup' | t }}" width="300" height="188">
+          </button>
+          <button type="button" data-gallery-thumb data-src="{{ 'capshot-2v2-setup.png' | asset_url }}" data-alt="{{ 'product.gallery_setup' | t }}">
+            <img src="{{ 'capshot-2v2-setup.png' | asset_url }}" alt="{{ 'product.gallery_setup' | t }}" width="300" height="188">
+          </button>
+          <button type="button" data-gallery-thumb data-src="{{ 'capshot-rolled.png' | asset_url }}" data-alt="{{ 'product.gallery_rolled' | t }}">
+            <img src="{{ 'capshot-rolled.png' | asset_url }}" alt="{{ 'product.gallery_rolled' | t }}" width="300" height="188">
+          </button>
+          <button type="button" data-gallery-thumb data-src="{{ 'capshot-gift-party.png' | asset_url }}" data-alt="{{ 'product.gallery_gift' | t }}">
+            <img src="{{ 'capshot-gift-party.png' | asset_url }}" alt="{{ 'product.gallery_gift' | t }}" width="300" height="188">
+          </button>
+        </div>
+      </div>
+
+      {% render 'buy-box', product: buy_product %}
+    {% endif %}
+  </div>
+</section>
+
+<div class="sticky-atc" data-sticky-bar aria-hidden="true">
+  <div class="sticky-atc__copy">
+    <strong>{{ 'product.title' | t }}</strong>
+    <span class="sticky-atc__price" data-sticky-price>{{ 'product.price_sale' | t }}</span>
+    <span class="sticky-atc__note">{{ 'product.ship_title' | t }} · {{ 'product.ship_text' | t }}</span>
+  </div>
+  {% if buy_product %}
+    {% form 'product', buy_product %}
+      <input type="hidden" name="id" value="{{ buy_product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="quantity" value="1" data-sticky-qty>
+      <button class="btn btn--primary sticky-atc__btn" type="submit" {% unless buy_product.available %}disabled{% endunless %} data-sticky-atc>
+        {{ 'product.add_to_cart' | t }}
+      </button>
+    {% endform %}
+  {% else %}
+    <a class="btn btn--primary sticky-atc__btn" href="{{ routes.cart_url }}" data-sticky-atc>{{ 'product.add_to_cart' | t }}</a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.product_buy.name",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:labels.product"
+    }
+  ],
+  "presets": [{ "name": "t:sections.product_buy.name" }]
+}
+{% endschema %}

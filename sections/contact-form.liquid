@@ -1,0 +1,34 @@
+<section class="section">
+  <div class="page-width">
+    <div class="page-hero">
+      <h1>{{ 'contact.heading' | t }}</h1>
+      <p class="lede">{{ 'contact.text' | t }}</p>
+    </div>
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}
+        <p>{{ 'contact.text' | t }}</p>
+      {% endif %}
+      {{ form.errors | default_errors }}
+      <div class="field">
+        <label for="ContactName">{{ 'contact.name' | t }}</label>
+        <input id="ContactName" type="text" name="contact[name]" required>
+      </div>
+      <div class="field">
+        <label for="ContactEmail">{{ 'contact.email' | t }}</label>
+        <input id="ContactEmail" type="email" name="contact[email]" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="ContactBody">{{ 'contact.message' | t }}</label>
+        <textarea id="ContactBody" name="contact[body]" rows="6" required></textarea>
+      </div>
+      <button class="btn btn--primary" type="submit">{{ 'contact.send' | t }}</button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.contact.name",
+  "settings": []
+}
+{% endschema %}

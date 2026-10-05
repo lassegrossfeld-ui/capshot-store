@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.shopify/
+.shopify-cli/
+.env
+.env.*
+*.pem
+.cursor/
+.cursor-skills/

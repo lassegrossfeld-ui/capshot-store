@@ -1,0 +1,42 @@
+{% liquid
+  assign flagship = section.settings.product
+  if flagship == blank
+    assign flagship = settings.featured_product
+  endif
+  if flagship == blank
+    assign flagship = all_products['capshot-matte']
+  endif
+  assign flagship_url = flagship.url | default: '/products/capshot-matte'
+  assign spotlight_image = blank
+  assign spotlight_alt = 'home.flagship_alt' | t
+  if flagship.featured_image
+    assign spotlight_image = flagship.featured_image | image_url: width: 1200
+    if flagship.featured_image.alt != blank
+      assign spotlight_alt = flagship.featured_image.alt
+    endif
+  endif
+%}
+
+<section class="section section--product-spotlight">
+  <div class="page-width">
+    {% render 'product-spotlight',
+      url: flagship_url,
+      image: spotlight_image,
+      image_alt: spotlight_alt
+    %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.flagship.name",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:labels.product"
+    }
+  ],
+  "presets": [{ "name": "t:sections.flagship.name" }]
+}
+{% endschema %}

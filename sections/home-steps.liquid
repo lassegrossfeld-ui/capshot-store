@@ -1,0 +1,36 @@
+<section class="section section--steps">
+  <div class="page-width">
+    <h2 class="steps-heading">
+      {{ 'steps.heading_before' | t }}
+      <span class="steps-heading-accent">{{ 'steps.heading_accent' | t }}</span>
+    </h2>
+    <div class="steps-grid">
+      <article class="step-card step-card--1">
+        <span class="step-card__index">01</span>
+        <span class="step-card__mark" aria-hidden="true"></span>
+        <h3>{{ 'steps.card_1_title' | t }}</h3>
+        <p>{{ 'steps.card_1_text' | t }}</p>
+      </article>
+      <article class="step-card step-card--2">
+        <span class="step-card__index">02</span>
+        <span class="step-card__mark step-card__mark--cap" aria-hidden="true"></span>
+        <h3>{{ 'steps.card_2_title' | t }}</h3>
+        <p>{{ 'steps.card_2_text' | t }}</p>
+      </article>
+      <article class="step-card step-card--3">
+        <span class="step-card__index">03</span>
+        <span class="step-card__mark step-card__mark--burst" aria-hidden="true"></span>
+        <h3>{{ 'steps.card_3_title' | t }}</h3>
+        <p>{{ 'steps.card_3_text' | t }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.steps.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.steps.name" }]
+}
+{% endschema %}

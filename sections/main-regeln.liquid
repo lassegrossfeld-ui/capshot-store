@@ -1,0 +1,188 @@
+{% liquid
+  assign rules_product = all_products['capshot-matte']
+  assign rules_buy_url = rules_product.url | default: '/products/capshot-matte'
+%}
+
+<section class="rules-hero">
+  <div class="page-width rules-hero__grid">
+    <div class="rules-hero__copy">
+      <p class="rules-hero__kicker">{{ 'regeln.kicker' | t }}</p>
+      <h1 class="rules-hero__title">{{ 'regeln.hero_title' | t }}</h1>
+    </div>
+    <div class="rules-hero__media">
+      <img
+        src="{{ 'capshot-banner-party-01.jpg' | asset_url }}"
+        alt="{{ 'regeln.hero_image_alt' | t }}"
+        width="1600"
+        height="900"
+        loading="eager"
+      >
+    </div>
+  </div>
+</section>
+
+<section class="section section--rules">
+  <div class="page-width rules-layout">
+    <header class="rules-intro">
+      <h2>{{ 'regeln.heading' | t }}</h2>
+      <p>{{ 'regeln.intro' | t }}</p>
+    </header>
+
+    <nav class="rules-toc" aria-labelledby="RulesTocTitle">
+      <h2 id="RulesTocTitle" class="rules-toc__title">{{ 'regeln.toc_heading' | t }}</h2>
+      <ol class="rules-toc__list">
+        <li><a href="#RulesEquipment">{{ 'regeln.toc_equipment' | t }}</a></li>
+        <li><a href="#RulesFairPlay">{{ 'regeln.toc_fairplay' | t }}</a></li>
+        <li><a href="#RulesStart">{{ 'regeln.toc_start' | t }}</a></li>
+        <li><a href="#RulesGameplay">{{ 'regeln.toc_gameplay' | t }}</a></li>
+        <li><a href="#RulesWin">{{ 'regeln.toc_end' | t }}</a></li>
+        <li><a href="#RulesVisual">{{ 'regeln.toc_visual' | t }}</a></li>
+      </ol>
+    </nav>
+
+    <div class="rules-article">
+      <section class="rules-block" id="RulesEquipment" aria-labelledby="RulesEquipmentTitle">
+        <h2 id="RulesEquipmentTitle">{{ 'regeln.equipment_heading' | t }}</h2>
+        <ul class="rules-equipment">
+          <li class="rules-equipment__item">
+            <span class="rules-equipment__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 10h12M6 14h8"></path></svg>
+            </span>
+            <h3>{{ 'regeln.equipment_mat_title' | t }}</h3>
+            <p>{{ 'regeln.equipment_mat_value' | t }}</p>
+          </li>
+          <li class="rules-equipment__item">
+            <span class="rules-equipment__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6v3H9zM8 6h8l-1 14H9L8 6z"></path></svg>
+            </span>
+            <h3>{{ 'regeln.equipment_bottles_title' | t }}</h3>
+            <p>{{ 'regeln.equipment_bottles_value' | t }}</p>
+          </li>
+          <li class="rules-equipment__item">
+            <span class="rules-equipment__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+            </span>
+            <h3>{{ 'regeln.equipment_caps_title' | t }}</h3>
+            <p>{{ 'regeln.equipment_caps_value' | t }}</p>
+          </li>
+          <li class="rules-equipment__item">
+            <span class="rules-equipment__icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="4" rx="1"></rect><path d="M5 12v6M19 12v6M9 18h6"></path></svg>
+            </span>
+            <h3>{{ 'regeln.equipment_table_title' | t }}</h3>
+            <p>{{ 'regeln.equipment_table_value' | t }}</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="rules-block rules-block--soft" id="RulesFairPlay" aria-labelledby="RulesFairPlayTitle">
+        <h2 id="RulesFairPlayTitle">{{ 'regeln.fairplay_heading' | t }}</h2>
+        <p>{{ 'regeln.fairplay_text' | t }}</p>
+      </section>
+
+      <section class="rules-block" id="RulesStart" aria-labelledby="RulesStartTitle">
+        <h2 id="RulesStartTitle">{{ 'regeln.start_heading' | t }}</h2>
+        <ul class="rules-quick">
+          <li>{{ 'regeln.start_li_1' | t }}</li>
+          <li>{{ 'regeln.start_li_2' | t }}</li>
+          <li>{{ 'regeln.start_li_3' | t }}</li>
+          <li>{{ 'regeln.start_li_4' | t }}</li>
+        </ul>
+        <p>{{ 'regeln.start_rps' | t }}</p>
+        <p class="rules-callout">{{ 'regeln.start_crosshair' | t }}</p>
+      </section>
+
+      <section class="rules-block rules-block--soft" id="RulesGameplay" aria-labelledby="RulesGameplayTitle">
+        <h2 id="RulesGameplayTitle">{{ 'regeln.gameplay_heading' | t }}</h2>
+        <ul class="rules-quick">
+          <li>{{ 'regeln.gameplay_li_1' | t }}</li>
+          <li>{{ 'regeln.gameplay_li_2' | t }}</li>
+          <li>{{ 'regeln.gameplay_li_3' | t }}</li>
+          <li>{{ 'regeln.gameplay_li_4' | t }}</li>
+        </ul>
+
+        <h3 class="rules-subtitle">{{ 'regeln.order_subheading' | t }}</h3>
+        <p>{{ 'regeln.order_intro' | t }}</p>
+        <ol class="rules-order">
+          <li>{{ 'regeln.order_1' | t }}</li>
+          <li>{{ 'regeln.order_2' | t }}</li>
+          <li>{{ 'regeln.order_3' | t }}</li>
+          <li>{{ 'regeln.order_4' | t }}</li>
+        </ol>
+        <p class="rules-note">{{ 'regeln.order_note' | t }}</p>
+
+        <h3 class="rules-subtitle">{{ 'regeln.scoring_subheading' | t }}</h3>
+        <p>{{ 'regeln.scoring_intro' | t }}</p>
+        <ul class="rules-scoring">
+          <li><strong>{{ 'regeln.scoring_row_1_label' | t }}</strong> — {{ 'regeln.scoring_row_1_value' | t }}</li>
+          <li><strong>{{ 'regeln.scoring_row_2_label' | t }}</strong> — {{ 'regeln.scoring_row_2_value' | t }}</li>
+          <li><strong>{{ 'regeln.scoring_row_3_label' | t }}</strong> — {{ 'regeln.scoring_row_3_value' | t }}</li>
+          <li><strong>{{ 'regeln.scoring_row_4_label' | t }}</strong> — {{ 'regeln.scoring_row_4_value' | t }}</li>
+          <li><strong>{{ 'regeln.scoring_row_5_label' | t }}</strong> — {{ 'regeln.scoring_row_5_value' | t }}</li>
+        </ul>
+
+        <h3 class="rules-subtitle">{{ 'regeln.overlap_subheading' | t }}</h3>
+        <p>{{ 'regeln.scoring_overlap' | t }}</p>
+
+        <h3 class="rules-subtitle">{{ 'regeln.extra_beer_subheading' | t }}</h3>
+        <p>{{ 'regeln.scoring_extra_beer' | t }}</p>
+
+        <h3 class="rules-subtitle">{{ 'regeln.caps_subheading' | t }}</h3>
+        <ul class="rules-quick">
+          <li>{{ 'regeln.caps_li_1' | t }}</li>
+          <li>{{ 'regeln.caps_li_2' | t }}</li>
+          <li>{{ 'regeln.caps_li_3' | t }}</li>
+        </ul>
+
+        <h3 class="rules-subtitle">{{ 'regeln.caps_crosshair_heading' | t }}</h3>
+        <p>{{ 'regeln.caps_crosshair_intro' | t }}</p>
+        <article class="rules-scenario">
+          <h4>{{ 'regeln.caps_scenario_a_title' | t }}</h4>
+          <p>{{ 'regeln.caps_scenario_a_text' | t }}</p>
+        </article>
+        <article class="rules-scenario">
+          <h4>{{ 'regeln.caps_scenario_b_title' | t }}</h4>
+          <p>{{ 'regeln.caps_scenario_b_text' | t }}</p>
+        </article>
+        <article class="rules-scenario">
+          <h4>{{ 'regeln.caps_scenario_c_title' | t }}</h4>
+          <p>{{ 'regeln.caps_scenario_c_text' | t }}</p>
+        </article>
+      </section>
+
+      <section class="rules-block" id="RulesWin" aria-labelledby="RulesWinTitle">
+        <h2 id="RulesWinTitle">{{ 'regeln.win_heading' | t }}</h2>
+        <p>{{ 'regeln.win_text' | t }}</p>
+      </section>
+
+      <section class="rules-block rules-block--soft" id="RulesVisual" aria-labelledby="RulesVisualTitle">
+        <h2 id="RulesVisualTitle">{{ 'regeln.visual_heading' | t }}</h2>
+        <p>{{ 'regeln.visual_text' | t }}</p>
+        <div class="rules-visual-grid">
+          <figure class="rules-visual-card">
+            <img src="{{ 'how-setup.png' | asset_url }}" alt="{{ 'how.step_1_alt' | t }}" width="1200" height="675" loading="lazy">
+            <figcaption>{{ 'how.step_1_title' | t }}</figcaption>
+          </figure>
+          <figure class="rules-visual-card">
+            <img src="{{ 'how-flick.png' | asset_url }}" alt="{{ 'how.step_4_alt' | t }}" width="1200" height="900" loading="lazy">
+            <figcaption>{{ 'how.step_4_title' | t }}</figcaption>
+          </figure>
+        </div>
+        <p><a class="rules-inline-link" href="{{ rules_buy_url }}">{{ 'regeln.visual_link' | t }}</a></p>
+      </section>
+
+      <aside class="rules-cta" id="RulesShop">
+        <h2>{{ 'regeln.cta_heading' | t }}</h2>
+        <p>{{ 'regeln.cta_text' | t }}</p>
+        <a class="btn btn--primary" href="{{ rules_buy_url }}">{{ 'regeln.cta_button' | t }}</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.regeln.name",
+  "settings": []
+}
+{% endschema %}

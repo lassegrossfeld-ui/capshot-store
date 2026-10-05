@@ -1,0 +1,43 @@
+<header class="site-header">
+  <div class="page-width header-inner">
+    <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="MobileNav">
+      <span class="visually-hidden">{{ 'accessibility.menu' | t }}</span>
+      {% render 'icon-menu' %}
+    </button>
+    {% render 'logo' %}
+    <nav class="nav" aria-label="{{ 'general.shop_name' | t }}">
+      <a href="{{ routes.root_url }}">{{ 'header.home' | t }}</a>
+      <a href="{{ all_products['capshot-matte'].url | default: '/products/capshot-matte' }}">{{ 'header.shop' | t }}</a>
+      <a href="{{ pages.regeln.url | default: '/pages/regeln' }}"{% if page.handle == 'regeln' %} class="is-active" aria-current="page"{% endif %}>{{ 'header.regeln' | t }}</a>
+      <a href="{{ pages.kontakt.url | default: '/pages/kontakt' }}">{{ 'header.kontakt' | t }}</a>
+      <a href="{{ pages.community.url | default: '/pages/community' }}">{{ 'header.community' | t }}</a>
+    </nav>
+    <div class="header-actions">
+      {% render 'language-switcher' %}
+      <button class="icon-btn" type="button" data-cart-open aria-controls="CartDrawer" aria-expanded="false">
+        <span class="visually-hidden">{{ 'accessibility.cart' | t }}</span>
+        {% render 'icon-cart' %}
+        {% if cart.item_count > 0 %}
+          <span class="cart-count">{{ cart.item_count }}</span>
+        {% endif %}
+      </button>
+    </div>
+  </div>
+  <nav id="MobileNav" class="menu-panel page-width" data-menu-panel>
+    <a href="{{ routes.root_url }}">{{ 'header.home' | t }}</a>
+    <a href="{{ all_products['capshot-matte'].url | default: '/products/capshot-matte' }}">{{ 'header.shop' | t }}</a>
+    <a href="{{ pages.regeln.url | default: '/pages/regeln' }}"{% if page.handle == 'regeln' %} class="is-active" aria-current="page"{% endif %}>{{ 'header.regeln' | t }}</a>
+    <a href="{{ pages.kontakt.url | default: '/pages/kontakt' }}">{{ 'header.kontakt' | t }}</a>
+    <a href="{{ pages.community.url | default: '/pages/community' }}">{{ 'header.community' | t }}</a>
+  </nav>
+</header>
+
+{% render 'cart-drawer' %}
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.header.name" }]
+}
+{% endschema %}

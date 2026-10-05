@@ -1,0 +1,27 @@
+<section class="section section--regeln-teaser">
+  <div class="page-width regeln-teaser">
+    <div class="regeln-teaser__media">
+      <img
+        src="{{ 'capshot-2v2-setup.png' | asset_url }}"
+        alt="{{ 'home.regeln_teaser_image_alt' | t }}"
+        width="1200"
+        height="900"
+        loading="lazy"
+      >
+    </div>
+    <div class="regeln-teaser__copy">
+      <p class="regeln-teaser__kicker">{{ 'regeln.kicker' | t }}</p>
+      <h2>{{ 'home.regeln_teaser_title' | t }}</h2>
+      <p>{{ 'home.regeln_teaser_text' | t }}</p>
+      <a class="btn btn--primary" href="{{ pages.regeln.url | default: '/pages/regeln' }}">{{ 'home.regeln_teaser_cta' | t }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.regeln_teaser.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.regeln_teaser.name" }]
+}
+{% endschema %}

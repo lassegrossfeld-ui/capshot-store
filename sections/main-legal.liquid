@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="page-width">
+    <div class="page-hero">
+      <h1>
+        {% case page.handle %}
+          {% when 'datenschutz' %}{{ 'legal.privacy_title' | t }}
+          {% when 'agb' %}{{ 'legal.terms_title' | t }}
+          {% when 'widerruf' %}{{ 'legal.refund_title' | t }}
+          {% when 'versand' %}{{ 'legal.shipping_title' | t }}
+          {% else %}{{ 'legal.impressum_title' | t }}
+        {% endcase %}
+      </h1>
+    </div>
+    <div class="legal-doc">
+      {% render 'legal-body', doc: page.handle %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.legal.name",
+  "settings": []
+}
+{% endschema %}

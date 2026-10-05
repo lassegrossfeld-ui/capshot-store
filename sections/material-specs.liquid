@@ -1,0 +1,20 @@
+<section class="section">
+  <div class="page-width">
+    <h2>{{ 'specs.heading' | t }}</h2>
+    <div class="specs">
+      <div class="spec"><strong>{{ 'specs.size_label' | t }}</strong><span>{{ 'specs.size_value' | t }}</span></div>
+      <div class="spec"><strong>{{ 'specs.players_label' | t }}</strong><span>{{ 'specs.players_value' | t }}</span></div>
+      <div class="spec"><strong>{{ 'specs.time_label' | t }}</strong><span>{{ 'specs.time_value' | t }}</span></div>
+      <div class="spec"><strong>{{ 'specs.need_label' | t }}</strong><span>{{ 'specs.need_value' | t }}</span></div>
+      <div class="spec"><strong>{{ 'specs.material_label' | t }}</strong><span>{{ 'specs.material_value' | t }}</span></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.specs.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.specs.name" }]
+}
+{% endschema %}

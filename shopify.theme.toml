@@ -1,0 +1,7 @@
+# Shopify CLI — Store für dieses Theme
+# Nach Login mit dem Capshot-Admin-Account:
+#   npm run theme:dev
+#   npm run theme:push -- --unpublished
+
+[environments.default]
+store = "mbudds-n6.myshopify.com"

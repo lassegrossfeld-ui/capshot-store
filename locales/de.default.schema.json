@@ -1,0 +1,44 @@
+{
+  "settings": {
+    "brand": "Marke",
+    "logo": "Logo",
+    "featured_product": "Capshot-Produkt"
+  },
+  "labels": {
+    "heading": "Überschrift",
+    "text": "Text",
+    "image": "Bild",
+    "product": "Produkt"
+  },
+  "sections": {
+    "announcement": { "name": "Announcement" },
+    "header": { "name": "Header" },
+    "hero": { "name": "Hero" },
+    "slideshow": { "name": "Slideshow" },
+    "flagship": { "name": "Königsprodukt" },
+    "steps": { "name": "So geht's" },
+    "cta_banner": { "name": "CTA-Banner" },
+    "why_capshot": { "name": "Warum Capshot" },
+    "community_teaser": { "name": "Community-Teaser" },
+    "faq_teaser": { "name": "FAQ-Teaser" },
+    "trust": { "name": "Trust" },
+    "product_buy": { "name": "Produkt kaufen" },
+    "how": { "name": "So funktioniert's" },
+    "size": { "name": "Maße" },
+    "social": { "name": "Stimmen" },
+    "specs": { "name": "Specs" },
+    "faq": { "name": "FAQ" },
+    "footer": { "name": "Footer" },
+    "page": { "name": "Seite" },
+    "regeln": { "name": "Regeln" },
+    "regeln_teaser": { "name": "Regeln-Teaser" },
+    "legal": { "name": "Rechtstext" },
+    "contact": { "name": "Kontakt" },
+    "community_page": { "name": "Community" },
+    "cart": { "name": "Warenkorb" },
+    "main_404": { "name": "404" },
+    "password": { "name": "Passwort" },
+    "search": { "name": "Suche" },
+    "sticky_atc": { "name": "Sticky Warenkorb" }
+  }
+}

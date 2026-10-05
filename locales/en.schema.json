@@ -1,0 +1,40 @@
+{
+  "settings": {
+    "brand": "Brand",
+    "logo": "Logo",
+    "featured_product": "Capshot product"
+  },
+  "labels": {
+    "heading": "Heading",
+    "text": "Text",
+    "image": "Image",
+    "product": "Product"
+  },
+  "sections": {
+    "announcement": { "name": "Announcement" },
+    "header": { "name": "Header" },
+    "hero": { "name": "Hero" },
+    "slideshow": { "name": "Slideshow" },
+    "flagship": { "name": "Flagship" },
+    "steps": { "name": "How to start" },
+    "trust": { "name": "Trust" },
+    "product_buy": { "name": "Buy product" },
+    "how": { "name": "How it works" },
+    "size": { "name": "Size" },
+    "social": { "name": "Quotes" },
+    "specs": { "name": "Specs" },
+    "faq": { "name": "FAQ" },
+    "footer": { "name": "Footer" },
+    "page": { "name": "Page" },
+    "regeln": { "name": "Rules" },
+    "regeln_teaser": { "name": "Rules teaser" },
+    "legal": { "name": "Legal text" },
+    "contact": { "name": "Contact" },
+    "community_page": { "name": "Community" },
+    "cart": { "name": "Cart" },
+    "main_404": { "name": "404" },
+    "password": { "name": "Password" },
+    "search": { "name": "Search" },
+    "sticky_atc": { "name": "Sticky cart" }
+  }
+}

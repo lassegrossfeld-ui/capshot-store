@@ -1,0 +1,29 @@
+{% doc %}
+Home product spotlight: media + copy + offer link to the product page.
+@param {string} url - Product URL
+@param {string} [image] - Optional image URL; blank shows placeholder
+@param {string} [image_alt] - Alt text when image is set
+@example
+{% render 'product-spotlight', url: product.url, image: product.featured_image %}
+{% enddoc %}
+
+<div class="product-spotlight">
+  <div class="product-spotlight__media">
+    {% if image != blank %}
+      <div class="gallery-main gallery-main--pdp product-spotlight__frame">
+        <img src="{{ image }}" alt="{{ image_alt | default: '' }}" width="1200" height="675" loading="lazy">
+      </div>
+    {% else %}
+      <div class="media-placeholder product-spotlight__placeholder" role="img" aria-label="{{ 'home.spotlight_placeholder' | t }}">
+        <span>{{ 'home.spotlight_placeholder' | t }}</span>
+      </div>
+    {% endif %}
+  </div>
+  <div class="product-spotlight__content">
+    <p class="product-spotlight__kicker">{{ 'home.flagship_kicker' | t }}</p>
+    <h2 class="product-spotlight__title">{{ 'product.title' | t }}</h2>
+    <p class="product-spotlight__lede">{{ 'product.tagline' | t }}</p>
+    {% render 'product-offer-card', url: url, thumbnail: true %}
+    <a class="btn btn--primary product-spotlight__cta" href="{{ url }}">{{ 'home.spotlight_cta' | t }}</a>
+  </div>
+</div>

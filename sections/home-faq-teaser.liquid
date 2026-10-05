@@ -1,0 +1,23 @@
+<section class="section section--faq section--faq-home">
+  <div class="page-width faq-home">
+    <h2 class="faq-home__heading">{{ 'faq.heading' | t }}</h2>
+    <div class="faq-accordion" data-faq-accordion>
+      {% render 'faq-accordion-item', index: 1, question_key: 'faq.q1', answer_key: 'faq.a1' %}
+      {% render 'faq-accordion-item', index: 2, question_key: 'faq.q2', answer_key: 'faq.a2' %}
+      {% render 'faq-accordion-item', index: 3, question_key: 'faq.q3', answer_key: 'faq.a3' %}
+      {% render 'faq-accordion-item', index: 4, question_key: 'faq.q4', answer_key: 'faq.a4' %}
+      {% render 'faq-accordion-item', index: 5, question_key: 'faq.q5', answer_key: 'faq.a5' %}
+      {% render 'faq-accordion-item', index: 6, question_key: 'faq.q6', answer_key: 'faq.a6' %}
+      {% render 'faq-accordion-item', index: 7, question_key: 'faq.q7', answer_key: 'faq.a7' %}
+      {% render 'faq-accordion-item', index: 8, question_key: 'faq.q8', answer_key: 'faq.a8' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.faq_teaser.name",
+  "settings": [],
+  "presets": [{ "name": "t:sections.faq_teaser.name" }]
+}
+{% endschema %}
